@@ -1,0 +1,71 @@
+@media screen and (min-width: 768px) {
+  #searchField {
+    max-width: 420px;
+  }
+}
+body {
+  font-family: 'IBM Plex Sans Condensed';font-size: 22px;
+  color: white;
+
+  text-align: center;
+  margin-top: 30px;
+  background: -webkit-linear-gradient(left, #3931af, #1abc9c);
+}
+
+#inputData,
+#Restart {
+  height: 35px;
+  min-height: 30px;
+
+  margin: 20px auto 15px;
+  padding: 0.5rem 1rem;
+  background: #1abc9c;
+  color: white;
+}
+
+#inputData:hover,
+#Restart:hover {
+
+  background: #2d6aa8;
+  color: white;
+}
+
+
+#searchField {
+  height: 35px;
+  font-size: 20px;
+  background: #fff;
+  border: 0.7px solid #ccc;
+
+  border-radius: 10px;
+  display: inline-block;
+  padding: 0 10px 10px;
+  margin-top: 50px;
+}
+
+#footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#outputField {
+  margin-top: 10px;
+  min-width: auto;
+  padding-bottom: 35%;
+  border-style: solid;
+  border-radius: 12px;
+  height: 500px;
+}
+
+span1 {
+  color: red;
+}
+
+span2 {
+  color: orange;
+}

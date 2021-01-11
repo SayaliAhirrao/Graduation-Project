@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patient's Health Graph</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://radsproj.000webhostapp.com/frontendapp/images/icon1.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style1.css">
+    <script type="text/javascript" src="./script.js"></script>
+
+</head>
+<body>
+
+
+<br><br><br>
+<!-- partial:index.partial.html -->
+<main>
+    <div class="graph">
+        <div class="graph-label">
+            <label>Heart Rate</label><span class="unit" id="display_heartrate"></span><span style="font-size: 15px;">&nbsp; bpm</span>
+        </div>
+        <div class="graph-canvas">
+            <canvas id="heartbeat-chart" height="40"></canvas>
+        </div>
+    </div>
+    <div class="graph">
+        <div class="graph-label">
+            <label>SpO2</label> <span class="unit" id="display_spo2"></span><span style="font-size: 15px;">&nbsp; &#37;</span>
+        </div>
+        <canvas id="spo2-chart" height="40"></canvas>
+    </div>
+    <div class="graph">
+        <div class="graph-label">
+            <label>Respiration</label>  <span class="unit" id="display_respirationrate"></span><span style="font-size: 15px;">&nbsp; rpm</span>
+        </div>
+        <canvas id="respiration-chart" height="40"></canvas>
+    </div>
+
+
+    <div class="graph">
+        <div class="graph-label" style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperature <br><span id="display_temperature"></span><span style="font-size: 15px;">&#8451;</span>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+<script src='https://www.chartjs.org/dist/2.9.2/Chart.min.js'></script><script  src="./script.js"></script>
+
+
+
+
+
+</body>
+
+
+
+
+<script>
+    setInterval(function()
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                window.b = this.responseText.split(',').map(function(item)
+                {
+                    return parseInt(item, 10);
+                });
+                document.getElementById("display_heartrate").innerHTML = window.b[0];
+                document.getElementById("display_respirationrate").innerHTML = window.b[1];
+                document.getElementById("display_spo2").innerHTML = window.b[2];
+                document.getElementById("display_temperature").innerHTML = window.b[3]/100;
+            }
+        };
+        xhttp.open("GET", "/readtemperature", true);
+        xhttp.send();
+    },1000 );
+</script>
+
+</html>

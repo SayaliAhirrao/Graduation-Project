@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: -webkit-linear-gradient(left, #3931af, #1abc9c);
+   
+  color: #fff;
+  font-family: arial;
+  font-size: 14px;
+}
+
+.container {
+  min-height: 50vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.container .pricing-card {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-image: linear-gradient(135deg, #111c31, #003c6c);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  margin: 50px 15px 15px;
+}
+.container .pricing-card .iconBx {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container .pricing-card .iconBx img {
+  position: absolute;
+  width: 70px;
+  top: -35px;
+}
+.container .pricing-card .card-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.container .pricing-card .pricing-feature {
+  list-style-type: none;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  width: 100%;
+  margin-top: 15px;
+}
+.container .pricing-card .pricing-feature li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+.container .pricing-card .pricing-feature li.doesnt-have {
+  color: #cecece;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.container .pricing-card .pricing-feature li.doesnt-have:before {
+  background-image: url(https://i.ibb.co/j5NTKd9/clear.png);
+}
+.container .pricing-card .pricing-feature li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-image: url(https://i.ibb.co/MNfVLs8/check-mark.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .pricing-card .btnBx {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .pricing-card .btnBx button {
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background-color: #0091ea;
+  color: #fff;
+}
+.container .pricing-card.gold-product {
+  transition: 0.2s ease-in-out;
+}
+.container .pricing-card.gold-product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.title {
+  text-align: center;
+  margin: 25px 0;
+  font-size: 25px;
+}

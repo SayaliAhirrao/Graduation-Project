@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient's Health Data</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/icon1.png" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script >
+        function alphaOnly(event) {
+            var key = event.keyCode;
+            return ((key >= 65 && key <= 90) || key == 8 || key == 32);
+        };
+    </script>
+
+    <style >
+        body{
+            background: -webkit-linear-gradient(left, #3931af, #1abc9c);
+        }
+        .contact-form {
+            background: #f8f9fa;
+            border-top-left-radius: 10% 50%;
+            border-bottom-left-radius: 10% 50%;
+            border-top-right-radius: 10% 50%;
+            border-bottom-right-radius: 10% 50%;
+        }
+    </style>
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
+    <div class="container">
+
+
+        <a class="navbar-brand js-scroll-trigger" href="dashboard.php" style="margin-top: 10px;margin-left:-65px;font-family: 'IBM Plex Sans', sans-serif;"><h4><i class=""  aria-hidden="true"></i> <img src="logo.png" width="50" height="60">&nbsp eHealth Monitoring System</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-left:  5px; ">
+            <ul class="navbar-nav ml-auto" style="margin-right:  1px; ">
+                <li class="nav-item" style="margin-right: 20px;">
+
+                    <a class="nav-link js-scroll-trigger" href="dashboard.php" style="font-size: 50px;color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6><b>Dashboard</b></h6></a>
+                </li>
+
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link js-scroll-trigger" href="about.php" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6><b>About Us</b></h6></a>
+                </li>
+
+
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link js-scroll-trigger" href="services.php" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6><b>Services</b></h6></a>
+                </li>
+
+
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link js-scroll-trigger" href="contact.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6><b>Contact Us</b></h6></a>
+                </li>
+
+
+
+                <li class="nav-item" style="margin-right: 1px;">
+                    <a class="nav-link js-scroll-trigger" href="blockchain.php" style="color: #10f528;font-family: 'IBM Plex Sans', sans-serif; margin-left: 1px;"><h6>This application is secure &nbsp;<img src="    https://sdramproject.s3.us-east-2.amazonaws.com/css/secure.png" width="15" height="20"></h6></a>
+
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+<style>
+
+    body {
+        font-family: tahoma;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .our-team {
+        padding: 30px 0 40px;
+        margin-bottom: 30px;
+        background-color: #ECEFF1;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .our-team .picture {
+        display: inline-block;
+        height: 130px;
+        width: 130px;
+        margin-bottom: 50px;
+        z-index: 1;
+        position: relative;
+    }
+
+    .our-team .picture::before {
+        content: "";
+        width: 100%;
+        height: 0;
+        border-radius: 50%;
+        background-color: #1abc9c;
+        position: absolute;
+        bottom: 135%;
+        right: 0;
+        left: 0;
+        opacity: 0.9;
+        transform: scale(3);
+        transition: all 0.3s linear 0s;
+    }
+
+    .our-team:hover .picture::before {
+        height: 100%;
+    }
+
+    .our-team .picture::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #1abc9c;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .our-team .picture img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        transform: scale(1);
+        transition: all 0.9s ease 0s;
+    }
+
+    .our-team:hover .picture img {
+        box-shadow: 0 0 0 14px #ECEFF1;
+        transform: scale(0.7);
+    }
+
+    .our-team .title {
+        display: block;
+        font-size: 15px;
+
+        text-transform: capitalize;
+        color: #5b2885;
+    }
+
+    .our-team .social {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: #1abc9c;
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        transition: all 0.5s ease 0s;
+    }
+
+    .our-team:hover .social {
+        bottom: 0;
+    }
+
+    .our-team .social li {
+        display: inline-block;
+    }
+
+    .our-team .social li a {
+        display: block;
+        padding: 10px;
+        font-size: 17px;
+        color: white;
+        transition: all 0.3s ease 0s;
+        text-decoration: none;
+    }
+
+    .our-team .social li a:hover {
+        color: #1369ce;
+        background-color: #f7f5ec;
+    }
+
+    h3{
+
+
+        font-size: 22px;
+        color: #5b2885;
+
+    }
+
+
+     .btn{
+         background-color: #342ac1;
+         color: white;
+         font-weight: bold;
+         font-family: 'IBM Plex Sans', sans-serif;
+     }
+
+    .btn:hover {
+        background-color: #1abc9c;
+        color: white;
+        font-weight: bold;
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+    </style>
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<div class="main-header" style="margin-bottom: 250px; margin-left: 90px;">
+    <div class="wrap">
+
+
+        <ul>
+
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<br><br><br>
+
+   <h2 style="color: white; text-align: center;margin-right: 120px; font-size: 30px;    font-family: 'Oswald', sans-serif;"><b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Patient's Health Data</b></h2>
+    <br>
+    <div class="container">
+        <div class="row" style="  margin: 0px 10px 0 10px;">
+
+
+
+            <div class="our-team"style="width: 250px; height: 250px; ">
+                <div class="">
+				<h5 style="font-size: 12px;font-family: Verdana, Geneva, sans-serif;"> Average Range: 60-100 bpm </h5>
+                    <img class="" src="https://sdramproject.s3.us-east-2.amazonaws.com/angular-8-registration-login-example-master/angular-8-registration-login-example-master/src/app/css/heart.png" style="width: 100px; height:90px;">
+                </div>
+                <div class="team-content" >
+                    <h3>Patient's Heart Rate:<br><span id="display_heartrate"></span><span>&nbsp; bpm</span></h3><br>
+                </div>
+
+            </div>
+
+
+
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="our-team"style="width: 250px; height: 250px;">
+                <div class="">
+				<h5 style="font-size: 12px;font-family: Verdana, Geneva, sans-serif;"> Average Range: 11-29 rpm </h5>
+                    <img class="" src="https://sdramproject.s3.us-east-2.amazonaws.com/angular-8-registration-login-example-master/angular-8-registration-login-example-master/src/app/css/respiration.png" style="width: 100px; height:90px;">
+                </div>
+                <div class="team-content" >
+                    <h3>Patient's Respiration Rate:<br><span id="display_respirationrate"></span><span>&nbsp;  rpm</span></h3><br>
+                </div>
+
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <div class="our-team"style="width: 250px; height: 250px;">
+                <div class="">
+					<h5 style="font-size: 12px;font-family: Verdana, Geneva, sans-serif;"> Average Range: 95-100 &#37;</h5>
+                    <img class="" src="https://sdramproject.s3.us-east-2.amazonaws.com/angular-8-registration-login-example-master/angular-8-registration-login-example-master/src/app/css/spo2.png" style="width: 100px; height:90px;">
+                </div>
+                <div class="team-content" >
+                    <h3>Patient's SPO2:<br><span id="display_spo2"></span><span>&nbsp; &#37;</span></h3><br>
+                </div>
+
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <div class="our-team"style="width: 250px; height: 250px;">
+                <div class="">
+				<h5 style="font-size: 12px;font-family: Verdana, Geneva, sans-serif;"> Average Range: 32-38 &#8451;</h5>
+                    <img class="" src="https://sdramproject.s3.us-east-2.amazonaws.com/angular-8-registration-login-example-master/angular-8-registration-login-example-master/src/app/css/temp.png" style="width: 100px; height:90px;">
+                </div>
+                <div class="team-content" >
+                    <h3>Patient's Temperature:<br><span id="display_temperature"></span><span>&nbsp; &#8451;</span></h3><br>
+                </div>
+
+            </div>
+          
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+    <input type=submit onclick="window.open('/OTA_login');" class=btn style="margin-left: 25px; width: 350px;" value="OTA Update">
+    <input type=submit onclick="window.open('/network_change');" class=btn style="margin-left: 20px; width: 350px;" value="Change Wi-Fi network">
+    <input type=submit onclick="window.open('/graph.html');" class=btn style="margin-left: 20px; width: 305px;" value="Graphs">
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+<script>
+    setInterval(function()
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                window.b = this.responseText.split(',').map(function(item)
+                {
+                    return parseInt(item, 10);
+                });
+                document.getElementById("display_heartrate").innerHTML = window.b[0];
+                document.getElementById("display_respirationrate").innerHTML = window.b[1];
+                document.getElementById("display_spo2").innerHTML = window.b[2];
+                document.getElementById("display_temperature").innerHTML = window.b[3]/100;
+            }
+        };
+        xhttp.open("GET", "/readtemperature", true);
+        xhttp.send();
+    },1000 );
+</script>
+
+
+<!-- 
+
+//I tried to design the below code to integrate with MYSQL database
+
+//1st code
+
+//var xhttp = new XMLHttpRequest();
+//xhr.open("POST", '/readserver', true);
+
+//Send the proper header information along with the request
+//xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+//xhttp.onreadystatechange = function() { // Call a function when the state changes.
+  //  if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+   //     // Request finished. Do processing here.
+   // }
+//}
+//xhttp.send("foo=bar&lorem=ipsum");
+// xhr.send(new Int8Array()); 
+// xhr.send(document);
+
+
+//2nd code
+
+ // var post_data = {foo: "display_heartrate", lorem: "display_temperature"};
+ // $.ajax({
+  //  url: 'http://healthypi.local/server',
+   // data: post_data,
+   // type: 'POST',
+  //  success: function(data) {
+   //   console.log(data);
+  //  }
+ // });
+
+
+
+</script>
+
+<script type='text/javascript'>
+    // This will trigger your page to refresh 5s after it was loaded
+    setTimeout(function(){ window.location.reload(true); },5000);
+</script>
+
+
+ 
+ <script type='text/javascript'>
+     // This will trigger your page to refresh 5s after it was loaded
+     setTimeout(function(){ window.location.reload(true); },10000);
+ </script>
+ -->
+ 
+ 
+  
+ <script type='text/javascript'>
+     // This will trigger your page to refresh 5s after it was loaded
+     setTimeout(function(){ window.location.reload(true); },10000);
+ </script>
+</html>
+
+
+
+
